@@ -66,7 +66,7 @@ body {
 /* list box popup */
 .mylearn_listbox {
     position: relative;
-
+   
 
 }
 
@@ -79,6 +79,7 @@ body {
     position: absolute;
     top: -5px;
     right: 10px;
+   
 
 }
 
@@ -109,11 +110,18 @@ body {
     background-color: rgb(211, 15, 211);
     color: white;
     border: 1px solid black;
-    border-radius: 15px;
-    padding: 7px;
-    margin: 5px;
+    border-radius: 30px;
+    padding: 10px;
+    margin: 8px;
     border: none;
+    border: 2px solid rgb(211, 15, 211);
 
+}
+.category_section p:hover{
+    transition: 1s;
+    background-color: transparent;
+    color:black ;
+    border: 2px solid rgb(211, 15, 211);
 }
 
 /*Sale Image*/
@@ -123,17 +131,30 @@ body {
 
 .img_sale img {
     width: 100%;
-
-
 }
 
 .imgsale_box {
     border: 2px solid black;
-    width: 320px;
+    width: 400px;
     padding: 20px;
     position: absolute;
     top: 10%;
     left: 10%;
+    animation-duration: 2s;
+    animation-name:  zoom;
+    opacity: 0;
+    animation-fill-mode: forwards;
+   
+}
+@keyframes zoom {
+    0%{
+        transform: scale(0);
+        opacity: 0;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 /*Recommended Section*/
