@@ -21,6 +21,7 @@ body {
     padding: 10px;
     display: flex;
     justify-content: space-between;
+    /* align-items: center; */
     border-bottom: 1px solid black;
     background-color: white;
 
@@ -40,8 +41,9 @@ body {
 
 }
 
-.fa-solid {
+.fa-magnifying-glass {
     margin-top: 3px;
+    font-size: 15px;
 }
 
 .nav__s2 input {
@@ -62,11 +64,18 @@ body {
     align-items: center;
 
 }
+.nav__s4{
+    
+    display: none;
+}
+.fa-bars{
+   font-size:20px ;
+}
 
 /* list box popup */
 .mylearn_listbox {
     position: relative;
-   
+
 
 }
 
@@ -79,7 +88,7 @@ body {
     position: absolute;
     top: -5px;
     right: 10px;
-   
+
 
 }
 
@@ -94,7 +103,7 @@ body {
 }
 
 .mylearn_listbox:hover .mylearn_listbox_child {
-    display:block;
+    display: block;
 }
 
 /*Category Section*/
@@ -117,10 +126,12 @@ body {
     border: 2px solid rgb(211, 15, 211);
 
 }
-.category_section p:hover{
+
+/* animation update */
+.category_section p:hover {
     transition: 1s;
     background-color: transparent;
-    color:black ;
+    color: black;
     border: 2px solid rgb(211, 15, 211);
 }
 
@@ -135,23 +146,27 @@ body {
 
 .imgsale_box {
     border: 2px solid black;
+    background-color: white;
     width: 400px;
-    padding: 20px;
+    padding: 10px;
     position: absolute;
     top: 10%;
     left: 10%;
+    /* animation in positioning */
     animation-duration: 2s;
-    animation-name:  zoom;
+    animation-name: zoom;
     opacity: 0;
     animation-fill-mode: forwards;
-   
 }
+
+/* animations in positioning */
 @keyframes zoom {
-    0%{
+    0% {
         transform: scale(0);
         opacity: 0;
     }
-    100%{
+
+    100% {
         transform: scale(1);
         opacity: 1;
     }
@@ -167,29 +182,35 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 8px;
     margin-top: 15px;
+
 }
 
 /*product one */
 .product_card {
-    width: 220px;
+    width: 100%;
+    flex-grow: 1;
+    flex-basis: 20%;
+    
+
 }
 
 .product_card img {
-    width: 220px;
-    height: 150px;
+    width: 100%;
+    height: 50%;
+    
+
 }
 
 /*topics section*/
-.topic_sec {
-    margin-top: 10px;
-}
+
 
 .topic_cont {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 .topic_cont p {
@@ -202,33 +223,31 @@ body {
 }
 
 /*popular section*/
+.popular_sec{
+    margin-top: 20px;
+}
 .popular_container {
     display: flex;
     flex-wrap: wrap;
+    gap: 8px;
     justify-content: space-between;
     margin-top: 15px;
 }
-
-/*product one */
-.popular_card {
-    width: 300px;
-    margin-top: 10px;
-
-
+.popular_card{
+    flex-grow: 1;
+    flex-basis: 20%;
+    
 }
 
 .popular_card img {
-    width: 250px;
-    height: 150px;
-}
-
-.popular_card h3 {
-    width: 220px;
+    height: 50%;
+    width: 100%;
+    
 }
 
 /*footer*/
 .footer_container {
-    margin-top: 50px;
+    /* margin-top: 50px; */
     background-color: black;
     color: white;
     padding: 30px;
@@ -251,3 +270,47 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+
+
+/* Media queries */
+@media screen and (max-width:800px) {
+    body {
+        font-size: 10px;
+
+    }
+}
+
+@media screen and (max-width:800px) {
+    .product_card {
+        flex-basis: 40%;
+
+    }
+}
+   
+   @media screen and (max-width:600px) {
+        .popular_card{
+            flex-basis: 40%;
+        }
+       .category_section{
+        display: none;
+       } 
+       .nav__s2{
+        display: none;
+       }
+       .nav__s3{
+        display: none;
+       }
+       .nav__s4{
+        display: block;
+       }
+      
+
+   } 
+   @media screen and (max-width:1000px) {
+     .imgsale_box{
+        width: 30%;
+
+       }
+}
+
